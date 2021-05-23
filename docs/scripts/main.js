@@ -466,3 +466,50 @@ const showBlog = (name, index) => {
     }
   }
 };
+
+
+// SENDING EMAIL
+
+const loader = document.getElementById('page-loader')
+
+function sendEmailHandler(nameInput, emailInput, subjectInput, messageInput) {
+  loader.style.display = "block"
+  Email.send({
+      SecureToken: "f31c9937-cafa-4266-afe0-8c8b465ffa82",
+      To : 'sahilsiddiui.dev@gmail.com',
+      From: 'sahilsiddiqui813@gmail.com',
+      Subject: `${nameInput} send you a message.`,
+      Body: `Name: ${nameInput} <br/> Email: ${emailInput} <br/> Subject: ${subjectInput} <br /> Message: ${messageInput}`
+  }
+  ).then(
+    message => {
+    loader.style.display = "none"
+    setTimeout(function(){
+      if (message === 'OK') {
+          alert('Your message was send successfully.')
+      } else {
+          alert('There was an error while sending your message.')   
+      }
+    }, 10)
+    document.getElementById('nameInput').value = "";
+    document.getElementById('emailInput').value = "";
+    document.getElementById('subjectInput').value = "";
+    document.getElementById('messageInput').value = "";
+  });
+}
+
+const submitButton = document.getElementById('submit-button')
+
+submitButton.addEventListener("click", function(e) {
+  e.preventDefault()
+  const nameInput = document.getElementById('nameInput').value;
+  const emailInput = document.getElementById('emailInput').value;
+  const subjectInput = document.getElementById('subjectInput').value;
+  const messageInput = document.getElementById('messageInput').value;
+
+  if (!nameInput.trim() || !emailInput.trim() || !messageInput.trim()) {
+      alert('Name, Email and message are required!')
+  } else {
+      sendEmailHandler(nameInput.trim(), emailInput.trim(), subjectInput.trim(), messageInput.trim()) 
+  }
+});

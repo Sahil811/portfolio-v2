@@ -1,14 +1,14 @@
 {
     "liveSassCompile.settings.formats":[
-       {
-           "format": "expanded",
-           "extensionName": ".css",
-           "savePath": "/css"
-       },
+    //    {
+    //        "format": "expanded",
+    //        "extensionName": ".css",
+    //        "savePath": "/css"
+    //    },
        {
            "extensionName": ".min.css",
            "format": "compressed",
-           "savePath": "/docs/css"
+           "savePath": "/docs/style"
        }
    ],
    "liveSassCompile.settings.excludeList": [
@@ -20,4 +20,4 @@
        "> 1%",
        "last 2 versions"
    ]
-}
+   }

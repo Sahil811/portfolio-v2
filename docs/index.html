@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Sahil Siddiqui">
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./style/style.min.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
   />
     <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
     <script src="./scripts/main.js" defer></script>
-    <!-- <link rel="icon" href="/images/favicon.ico?" type="image/x-icon"> -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
     <title>Sahil Siddiqui | Web developer</title>
-    <!-- The design of the page is inspired by https://brittanychiang.com/ -->
 </head>
 
 <body>
-    <div class="loading-overlay">
+    <div class="loading" id="page-loader">Loading&#8230;</div>
+    <div class="loading-overlay" id="loading-overlay">
         <img src="./assets/logos/solar-system.svg" alt="Loading...">
     </div>
     <div class="content">
@@ -182,24 +183,24 @@
             <section class="contact" id="contact">
                 <div class="container">
                     <h1>Contact Me</h1>
-                    <form class="contact__form" action="https://formspree.io/f/mzbypajj" method="POST">
+                    <form class="contact__form">
                         <div class="input-group">
-                            <input required type="text"  name="name">
+                            <input required type="text"  name="name"  id="nameInput">
                             <label for="name" class="input-group__placeholder">Name</label>
                         </div>
                         <div class="input-group">
-                            <input required type="text"  name="email">
+                            <input required type="text"  name="email" id="emailInput" >
                             <label for="email" class="input-group__placeholder">Email</label>
                         </div>
                         <div class="input-group">
-                            <input required type="text"  name="subject">
+                            <input required type="text"  name="subject" id="subjectInput">
                             <label for="subject" class="input-group__placeholder">Subject</label>
                         </div>
                         <div class="input-group">
-                            <textarea required name="description" rows="9"></textarea>
+                            <textarea required name="description" rows="9" id="messageInput" ></textarea>
                             <label for="subject" class="input-group__placeholder">Message</label>
                         </div>
-                        <button class="button" type="submit">Send</button>
+                        <button class="button" id="submit-button" type="submit">Send</button>
                     </form>
                 </div>
             </section>
