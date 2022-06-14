@@ -62,15 +62,34 @@ sections.forEach((section) => {
 let selectedExperience = 0;
 const experiences = [
   `
+  <div class="experience__title">
+      Sofware Engineer @ <span>QBurst</span>
+  </div>
+  <div class="experience__duration">
+     Nov 2021 - Current
+  </div>
+  <ul>
+      <li>
+         Help in Creating Proof of concept in advance technical requirements for client and initiate client approval for the required project.
+      </li>
+      <li>
+         Insure implementation of project stack is up to date with latest, most suitable and future proof technologies is used.
+      </li>
+      <li>
+          <span>Tools and Technologies : </span> Node.js, Express.js, Redis, React.js, Redux, (S)CSS, MongoDB.
+      </li>
+  </ul>
+`,
+  `
     <div class="experience__title">
-        Full Stack Web developer @ <span>Appknit</span>
+        Software developer @ <span>Appknit</span>
     </div>
     <div class="experience__duration">
-       Oct 2020 - Current
+       Oct 2020 - Oct 2021
     </div>
     <ul>
         <li>
-            Wrote UI Kit with react which consisted of highly reusable components which helped my teammates to pick up the pace
+            Wrote UI Kit with react which consisted of highly reusable components which helped my teammates to pick up the pace.
         </li>
         <li>
            Converted design system to reusable react components with micro interactions.
