@@ -76,7 +76,7 @@ const experiences = [
          Insure implementation of project stack is up to date with latest, most suitable and future proof technologies is used.
       </li>
       <li>
-          <span>Tools and Technologies : </span> Node.js, Express.js, Redis, React.js, Redux, (S)CSS, MongoDB.
+          <span>Tools and Technologies : </span> Node.js, Express.js, AWS, Redis, React.js, Redux, (S)CSS, MongoDB.
       </li>
   </ul>
 `,
@@ -104,10 +104,41 @@ const experiences = [
           Coded actions and reducers for redux stores that links components and enables efficient flow of data between the components.
         </li>
         <li>
-            <span>Tools and Technologies : </span> Node.js, Express.js, Redis, React.js, Redux, (S)CSS, MongoDB.
+            <span>Tools and Technologies : </span> Node.js, Express.js, AWS, Redis, React.js, Redux, (S)CSS, MongoDB.
         </li>
     </ul>
   `,
+  `
+  <div class="experience__title">
+      Software developer @ <span>Freelance</span>
+  </div>
+  <div class="experience__duration">
+     Oct 2019 - Oct 2020
+  </div>
+  <ul>
+      <li>
+         Design client-side and server-side architecture.
+      </li>
+      <li>
+         Build the front-end of applications through appealing visual design.
+      </li>
+      <li>
+         Develop and manage well-functioning databases and applications.
+      </li>
+      <li>
+         Test software to ensure responsiveness and efficiency.
+      </li>
+      <li>
+         Troubleshoot, debug and web application.
+      </li>
+      <li>
+         Build features and applications with a mobile responsive design.
+      </li>
+      <li>
+          <span>Tools and Technologies : </span> Node.js, Express.js, Redis, React.js, Redux, (S)CSS, MongoDB.
+      </li>
+  </ul>
+`,
   `
   <div class="experience__title">
         Maintenance engineering Trainee @ <span>Nuvoco Vistas.</span>
@@ -184,16 +215,14 @@ let projectArray = [
   [
     {
       title: "Tik Tok",
-      description:
-        "A Simple Tik-Tok clone  build using React js.",
+      description: "A Simple Tik-Tok clone  build using React js.",
       imgSrc: "./assets/images/tik-tok-clone.png",
       githubLink: "https://github.com/Sahil811/tiktok",
       liveLink: "https://tiktok-855b6.web.app/",
     },
     {
       title: "Burger Builder",
-      description:
-        "A Simple React app to choose random what todo.",
+      description: "A Simple React app to choose random what todo.",
       imgSrc: "./assets/images/indecision.JPG",
       githubLink: "https://github.com/Sahil811/indecision-app",
       liveLink: "https://sahil-indecision-app.herokuapp.com/",
@@ -216,24 +245,21 @@ let projectArray = [
     },
     {
       title: "Netflix",
-      description:
-        "A Netflix landing page clone build using React js.",
+      description: "A Netflix landing page clone build using React js.",
       imgSrc: "./assets/images/netflix-clone.png",
       githubLink: "https://github.com/Sahil811/netflix",
       liveLink: "https://netflix-fea3a.web.app/",
     },
     {
       title: "Airbnb",
-      description:
-        "A Airbnb landing page clone build using React js.",
+      description: "A Airbnb landing page clone build using React js.",
       imgSrc: "./assets/images/airbnb-clone.png",
       githubLink: "https://github.com/Sahil811/airbnb",
       liveLink: "https://airbnb-clone-3ccd5.web.app/",
     },
     {
       title: "Amazon",
-      description:
-        "A Amazon clone build using React Js.",
+      description: "A Amazon clone build using React Js.",
       imgSrc: "./assets/images/amazon-clone.png",
       githubLink: "https://github.com/Sahil811/amazon",
       liveLink: "https://fir-4a7fe.web.app/",
@@ -254,123 +280,124 @@ let projectArray = [
       githubLink: "https://github.com/Sahil811/covid-19-tracker",
       liveLink: "https://covid-19-tracker-b1448.web.app/",
     },
- ],
- [ {
-    title: "Forkify",
-    description:
-      "A Pizza Recipe Searching Application using Vanilla Js.",
-    imgSrc: "./assets/images/forkify.JPG",
-    githubLink: "https://github.com/Sahil811/forkify",
-    liveLink: "https://forkify-21e1b.web.app/",
-  },
-  {
-    title: "Budgety",
-    description:
-      "Small JavaScript application to manage budget income and expense.",
-    imgSrc: "./assets/images/budgety.JPG",
-    githubLink: "https://github.com/Sahil811/budgety",
-    liveLink: "https://budgety-de264.web.app/",
-  },
-  {
-    title: "Dice Game",
-    description:
-      "Pig is simple dice game in which, each turn, a player repeatedly rolls a die to score to set points, A player looses his ENTIRE score when he rolls two 6 in a row or one die is rolled as 1.",
-    imgSrc: "./assets/images/dice-game.JPG",
-    githubLink: "https://github.com/Sahil811/javascript-Dice-Game",
-    liveLink: "https://dice-game-c6f13.web.app/",
-  }
- ],
- [ 
-   {
-  title: "Ominfood",
-  description:
-    "A food ordering service based on subscription.",
-  imgSrc: "./assets/images/omnifood.PNG",
-  githubLink: "https://github.com/Sahil811/omnifood",
-  liveLink: "https://omnifood-fc16b.web.app/",
-  },
-  {
-    title: "Trillo",
-    description:
-      "A website to book best hotel for your comfort.",
-    imgSrc: "./assets/images/trillo.JPG",
-    githubLink: "https://github.com/Sahil811/trillo",
-    liveLink: "https://trillo-d4c7f.web.app/",
-  },
-  {
-    title: "Nexter",
-    description:
-      "A Real state website to find your dream home",
-    imgSrc: "./assets/images/nexter.JPG",
-    githubLink: "https://github.com/Sahil811/nexter",
-    liveLink: "https://nexter-653c4.web.app/",
-  },
-  {
-    title: "Natours",
-    description:
-      "A website to book you tour because sometimes outdoors where new life start.",
-    imgSrc: "./assets/images/natours.JPG",
-    githubLink: "https://github.com/Sahil811/natours",
-    liveLink: "https://natours-334e3.web.app/",
-  }
- ],
- [
-  {
-    title: "Flipdeal",
-    description:
-      "A Shopping app for people who love fashionable clothes. Build using Mongodb, NodeJs, Express and React JS.",
-    imgSrc: "./assets/images/flipdeal.png",
-    githubLink: "https://github.com/Sahil811/flipdeal",
-    liveLink: "https://sahil-flipdeal.herokuapp.com/",
-  },
- ],
- [
-  {
-    title: "Natours App",
-    description:
-      "A Tour booking & managing application built with Node.js, Express, and MongoDB based on the Node.js. Ejs is used as templating engine.",
-    imgSrc: "./assets/images/natours-node.JPG",
-    githubLink: "https://github.com/Sahil811/natours-node",
-    liveLink: "https://natours-sahil.herokuapp.com/",
-  },
- ]
+  ],
+  [
+    {
+      title: "Forkify",
+      description: "A Pizza Recipe Searching Application using Vanilla Js.",
+      imgSrc: "./assets/images/forkify.JPG",
+      githubLink: "https://github.com/Sahil811/forkify",
+      liveLink: "https://forkify-21e1b.web.app/",
+    },
+    {
+      title: "Budgety",
+      description:
+        "Small JavaScript application to manage budget income and expense.",
+      imgSrc: "./assets/images/budgety.JPG",
+      githubLink: "https://github.com/Sahil811/budgety",
+      liveLink: "https://budgety-de264.web.app/",
+    },
+    {
+      title: "Dice Game",
+      description:
+        "Pig is simple dice game in which, each turn, a player repeatedly rolls a die to score to set points, A player looses his ENTIRE score when he rolls two 6 in a row or one die is rolled as 1.",
+      imgSrc: "./assets/images/dice-game.JPG",
+      githubLink: "https://github.com/Sahil811/javascript-Dice-Game",
+      liveLink: "https://dice-game-c6f13.web.app/",
+    },
+  ],
+  [
+    {
+      title: "Ominfood",
+      description: "A food ordering service based on subscription.",
+      imgSrc: "./assets/images/omnifood.PNG",
+      githubLink: "https://github.com/Sahil811/omnifood",
+      liveLink: "https://omnifood-fc16b.web.app/",
+    },
+    {
+      title: "Trillo",
+      description: "A website to book best hotel for your comfort.",
+      imgSrc: "./assets/images/trillo.JPG",
+      githubLink: "https://github.com/Sahil811/trillo",
+      liveLink: "https://trillo-d4c7f.web.app/",
+    },
+    {
+      title: "Nexter",
+      description: "A Real state website to find your dream home",
+      imgSrc: "./assets/images/nexter.JPG",
+      githubLink: "https://github.com/Sahil811/nexter",
+      liveLink: "https://nexter-653c4.web.app/",
+    },
+    {
+      title: "Natours",
+      description:
+        "A website to book you tour because sometimes outdoors where new life start.",
+      imgSrc: "./assets/images/natours.JPG",
+      githubLink: "https://github.com/Sahil811/natours",
+      liveLink: "https://natours-334e3.web.app/",
+    },
+  ],
+  [
+    {
+      title: "Flipdeal",
+      description:
+        "A Shopping app for people who love fashionable clothes. Build using Mongodb, NodeJs, Express and React JS.",
+      imgSrc: "./assets/images/flipdeal.png",
+      githubLink: "https://github.com/Sahil811/flipdeal",
+      liveLink: "https://sahil-flipdeal.herokuapp.com/",
+    },
+  ],
+  [
+    {
+      title: "Natours App",
+      description:
+        "A Tour booking & managing application built with Node.js, Express, and MongoDB based on the Node.js. Ejs is used as templating engine.",
+      imgSrc: "./assets/images/natours-node.JPG",
+      githubLink: "https://github.com/Sahil811/natours-node",
+      liveLink: "https://natours-sahil.herokuapp.com/",
+    },
+  ],
 ];
 
 const projectContainer = document.getElementById("projects-group");
 const projectButtons = document.querySelectorAll(".projects__buttons");
 
 const renderProjects = (selectedProjectsIndex) => {
-    projectArray[selectedProjectsIndex].map((el, index) => {
-      let newHtml = projectHtml.replaceAll("%title%", el.title);
-      newHtml = newHtml.replaceAll("%description%", el.description);
-      newHtml = newHtml.replaceAll("%imgSrc%", el.imgSrc);
-      newHtml = newHtml.replaceAll("%githubLink%", el.githubLink);
-      newHtml = newHtml.replaceAll("%liveLink%", el.liveLink);
-      newHtml = newHtml.replaceAll(
-        "%codeId%",
-        `${el.title.trim().replace(/\s+/g, "").toLocaleLowerCase()}-${index}-code`
-      );
-      newHtml = newHtml.replaceAll(
-        "%projectId%",
-        `${el.title
-          .trim()
-          .replace(/\s+/g, "")
-          .toLocaleLowerCase()}-${index}-project`
-      );
-      newHtml = newHtml.replaceAll("%projectIndex%", index);
-      projectContainer.insertAdjacentHTML("afterbegin", newHtml);
-      projectButtons[selectedProjectsIndex].classList.add("projects__buttons-active");
-    });
-  }
-  
-  renderProjects(selectedProjects)
-  
+  projectArray[selectedProjectsIndex].map((el, index) => {
+    let newHtml = projectHtml.replaceAll("%title%", el.title);
+    newHtml = newHtml.replaceAll("%description%", el.description);
+    newHtml = newHtml.replaceAll("%imgSrc%", el.imgSrc);
+    newHtml = newHtml.replaceAll("%githubLink%", el.githubLink);
+    newHtml = newHtml.replaceAll("%liveLink%", el.liveLink);
+    newHtml = newHtml.replaceAll(
+      "%codeId%",
+      `${el.title.trim().replace(/\s+/g, "").toLocaleLowerCase()}-${index}-code`
+    );
+    newHtml = newHtml.replaceAll(
+      "%projectId%",
+      `${el.title
+        .trim()
+        .replace(/\s+/g, "")
+        .toLocaleLowerCase()}-${index}-project`
+    );
+    newHtml = newHtml.replaceAll("%projectIndex%", index);
+    projectContainer.insertAdjacentHTML("afterbegin", newHtml);
+    projectButtons[selectedProjectsIndex].classList.add(
+      "projects__buttons-active"
+    );
+  });
+};
+
+renderProjects(selectedProjects);
+
 projectButtons.forEach((project, index) => {
   project.addEventListener("click", () => {
-    projectButtons[selectedProjects].classList.remove("projects__buttons-active");
+    projectButtons[selectedProjects].classList.remove(
+      "projects__buttons-active"
+    );
     selectedProjects = index;
-    projectContainer.innerHTML = '';
-    renderProjects(selectedProjects)
+    projectContainer.innerHTML = "";
+    renderProjects(selectedProjects);
   });
 });
 
@@ -486,49 +513,51 @@ const showBlog = (name, index) => {
   }
 };
 
-
 // SENDING EMAIL
 
-const loader = document.getElementById('page-loader')
+const loader = document.getElementById("page-loader");
 
 function sendEmailHandler(nameInput, emailInput, subjectInput, messageInput) {
-  loader.style.display = "block"
+  loader.style.display = "block";
   Email.send({
-      SecureToken: "f31c9937-cafa-4266-afe0-8c8b465ffa82",
-      To : 'sahilsiddiui.dev@gmail.com',
-      From: 'sahilsiddiqui813@gmail.com',
-      Subject: `${nameInput} send you a message.`,
-      Body: `Name: ${nameInput} <br/> Email: ${emailInput} <br/> Subject: ${subjectInput} <br /> Message: ${messageInput}`
-  }
-  ).then(
-    message => {
-    loader.style.display = "none"
-    setTimeout(function(){
-      if (message === 'OK') {
-          alert('Your message was send successfully.')
+    SecureToken: "f31c9937-cafa-4266-afe0-8c8b465ffa82",
+    To: "sahilsiddiui.dev@gmail.com",
+    From: "sahilsiddiqui813@gmail.com",
+    Subject: `${nameInput} send you a message.`,
+    Body: `Name: ${nameInput} <br/> Email: ${emailInput} <br/> Subject: ${subjectInput} <br /> Message: ${messageInput}`,
+  }).then((message) => {
+    loader.style.display = "none";
+    setTimeout(function () {
+      if (message === "OK") {
+        alert("Your message was send successfully.");
       } else {
-          alert('There was an error while sending your message.')   
+        alert("There was an error while sending your message.");
       }
-    }, 10)
-    document.getElementById('nameInput').value = "";
-    document.getElementById('emailInput').value = "";
-    document.getElementById('subjectInput').value = "";
-    document.getElementById('messageInput').value = "";
+    }, 10);
+    document.getElementById("nameInput").value = "";
+    document.getElementById("emailInput").value = "";
+    document.getElementById("subjectInput").value = "";
+    document.getElementById("messageInput").value = "";
   });
 }
 
-const submitButton = document.getElementById('submit-button')
+const submitButton = document.getElementById("submit-button");
 
-submitButton.addEventListener("click", function(e) {
-  e.preventDefault()
-  const nameInput = document.getElementById('nameInput').value;
-  const emailInput = document.getElementById('emailInput').value;
-  const subjectInput = document.getElementById('subjectInput').value;
-  const messageInput = document.getElementById('messageInput').value;
+submitButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  const nameInput = document.getElementById("nameInput").value;
+  const emailInput = document.getElementById("emailInput").value;
+  const subjectInput = document.getElementById("subjectInput").value;
+  const messageInput = document.getElementById("messageInput").value;
 
   if (!nameInput.trim() || !emailInput.trim() || !messageInput.trim()) {
-      alert('Name, Email and message are required!')
+    alert("Name, Email and message are required!");
   } else {
-      sendEmailHandler(nameInput.trim(), emailInput.trim(), subjectInput.trim(), messageInput.trim()) 
+    sendEmailHandler(
+      nameInput.trim(),
+      emailInput.trim(),
+      subjectInput.trim(),
+      messageInput.trim()
+    );
   }
 });
