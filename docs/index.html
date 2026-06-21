@@ -3,230 +3,708 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Sahil Siddiqui — Senior Software Engineer</title>
+    <meta name="description" content="Senior Software Engineer with 6+ years building enterprise SaaS platforms, AI-powered applications, and distributed microservices. Expert in React.js, TypeScript, Node.js, Go, and AI/LLM systems.">
     <meta name="author" content="Sahil Siddiqui">
-    <link rel="stylesheet" href="./style/style.min.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-  />
-    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet"> -->
-    <script src="./scripts/main.js" defer></script>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <meta name="keywords" content="Sahil Siddiqui, Software Engineer, Full Stack, React, Node.js, Go, AI, LLM, RAG, Portfolio">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Sahil Siddiqui — Senior Software Engineer">
+    <meta property="og:description" content="Building enterprise-scale platforms, AI pipelines, and distributed systems.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sahil811.github.io/portfolio-v2/">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- Favicon -->
     <link rel="icon" href="./assets/images/favicon.ico" type="image/x-icon">
-    <title>Sahil Siddiqui | Web developer</title>
+
+    <!-- Scripts -->
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
-    <div class="loading" id="page-loader">Loading&#8230;</div>
-    <div class="loading-overlay" id="loading-overlay">
-        <img src="./assets/logos/solar-system.svg" alt="Loading...">
-    </div>
-    <div class="content">
-        <nav class="nav">
-            <h1 class="nav__brand">
-                &ltSahil/&gt
-            </h1>
-            <button class="nav__toggle" id="nav-toggle">
-                <span class="nav__hamburger"></span>
-                <span class="nav__hamburger"></span>
-                <span class="nav__hamburger"></span>
-            </button>
-            <ul class="nav__links" orientation="right">
-                <li id="home-link">
-                    <a href="#home" >
-                        Home
-                    </a>
-                </li>
-                <li id="about-link">
-                    <a href="#about" >
-                        About Me
-                    </a>
-                </li>
-                <li id="experience-link">
-                    <a href="#experience">
-                        Experience
-                    </a>
-                </li>
-                <li id="projects-link">
-                    <a href="#projects">
-                        Projects
-                    </a>
-                </li>
-                <li id="contact-link">
-                    <a href="#contact" >
-                        Get in Touch
-                    </a>
-                </li>
-                <li>
-                    <a href="https://drive.google.com/file/d/1o6V1oLOT9RHnDAsb9dxn-w8XGeXAKdtO/view?usp=sharing" class="button" target="_blank">
-                        Resume
-                    </a>
-                </li>
-                <div class="nav__links__contact" id="nav-contact">
-                    <a href="https://github.com/Sahil811">
-                        <img src="./assets/logos/github-logo.svg" alt="github">
-                    </a>
-                    <a href="https://www.linkedin.com/in/sahil-siddiqui811/">
-                        <img src="./assets/logos/linkedin.svg" alt="linkedin">
-                    </a>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="nav" id="navbar" role="navigation" aria-label="Main navigation">
+        <a href="#hero" class="nav__brand" aria-label="Go to top">
+            <span>&lt;</span>Sahil<span>/&gt;</span>
+        </a>
+
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+            <span class="nav__hamburger"></span>
+            <span class="nav__hamburger"></span>
+            <span class="nav__hamburger"></span>
+        </button>
+
+        <ul class="nav__links" id="nav-links">
+            <li>
+                <a href="#about" id="nav-about">
+                    <span class="nav-num">01.</span>About
+                </a>
+            </li>
+            <li>
+                <a href="#experience" id="nav-experience">
+                    <span class="nav-num">02.</span>Experience
+                </a>
+            </li>
+            <li>
+                <a href="#projects" id="nav-projects">
+                    <span class="nav-num">03.</span>Projects
+                </a>
+            </li>
+            <li>
+                <a href="#testimonials" id="nav-testimonials">
+                    <span class="nav-num">04.</span>Testimonials
+                </a>
+            </li>
+            <li>
+                <a href="#contact" id="nav-contact">
+                    <span class="nav-num">05.</span>Contact
+                </a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/file/d/1n-NLnyEXIpjaG9ad6sL3fuaoqJfaXZiF/view?usp=sharing"
+                   class="nav__resume-btn" target="_blank" rel="noopener noreferrer">
+                    Resume
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="nav-overlay" id="nav-overlay"></div>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
+
+        <div class="hero__content">
+            <p class="hero__greeting">Hello, my name is</p>
+            <h1 class="hero__name">Sahil Siddiqui.</h1>
+            <div class="hero__title-wrapper">
+                <span class="hero__title" id="typewriter-text"></span>
+                <span class="hero__typewriter-cursor" aria-hidden="true"></span>
+            </div>
+            <p class="hero__description">
+                I build enterprise-scale platforms, AI-powered systems, and distributed 
+                architectures that are scalable, reliable, and impactful.
+            </p>
+            <div class="hero__actions">
+                <a href="#projects" class="btn btn-primary">
+                    View My Work
+                    <span class="btn-icon" aria-hidden="true">→</span>
+                </a>
+                <a href="https://drive.google.com/file/d/1n-NLnyEXIpjaG9ad6sL3fuaoqJfaXZiF/view?usp=sharing"
+                   class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+                    Download Resume
+                </a>
+            </div>
+            <div class="hero__socials">
+                <a href="https://github.com/Sahil811" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <span class="social-divider" aria-hidden="true"></span>
+                <a href="https://www.linkedin.com/in/sahil-siddiqui811/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+            <span>scroll</span>
+            <div class="hero__scroll-line"></div>
+        </div>
+    </section>
+
+    <main>
+        <!-- ==================== ABOUT ==================== -->
+        <section class="section" id="about">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">About Me</p>
+                    <h2 class="section-title">Building what <span class="gradient-text">matters</span>.</h2>
                 </div>
-            </ul>
-        </nav>
-        <main>
-            <section class="home" id="home">
-                <div class="container">
-                    <h4>Hello there! My name is</h4>
-                    <h1>Sahil Siddiqui.</h1>
-                    <h2>I am a full stack web developer.</h2>
-                    <p>Bringing the best user experience possible</p>
-                    <button>Contact Me!</button>
-                    <div class="home__contact">
-                        <a href="https://github.com/Sahil811" target="_block">
-                            <img src="./assets/logos/github-logo.svg" alt="github">
-                        </a>
-                        <a href="https://www.linkedin.com/in/sahil-siddiqui811/" target="__block">
-                            <img src="./assets/logos/linkedin.svg" alt="linkedin">
-                        </a>
+
+                <div class="about__grid">
+                    <div class="about__image-wrapper reveal-left">
+                        <div class="about__image-frame">
+                            <img src="./assets/images/sahil_image.jpg" alt="Sahil Siddiqui" loading="lazy">
+                        </div>
+                        <div class="about__image-decor" aria-hidden="true"></div>
                     </div>
-                </div>
-            </section>
-            <section class="about" id="about">
-                <div class="container">
-                    <h1>About Me</h1>
-                    <div class="about__content">
-                        <div class="about__image__container">
-                            <div class="about__image__container__image">
-                                <img src="./assets/images/avatar.jpg" alt="avatar">
-                                </img>
+
+                    <div class="about__text reveal-right">
+                        <p>
+                            I'm a <strong>Senior Software Engineer</strong> with over 6 years of experience 
+                            building and modernizing enterprise SaaS platforms, distributed microservices, 
+                            and AI-powered applications for clients across fintech, insurance, and retail.
+                        </p>
+                        <p>
+                            My work spans from leading the development of <strong>AI-powered insurance dashboards</strong> 
+                            for Prudential Singapore, to modernizing <strong>POS systems across 200+ retail stores</strong> 
+                            in Japan, to building enterprise <strong>RAG pipelines</strong> that automate document 
+                            retrieval and customer interaction workflows.
+                        </p>
+                        <p>
+                            I enjoy solving complex engineering challenges at the intersection of software, AI, 
+                            and cloud infrastructure — and I'm always interested in building systems that are 
+                            scalable, reliable, and impactful.
+                        </p>
+
+                        <!-- Stats -->
+                        <div class="about__stats">
+                            <div class="stat reveal stagger-1">
+                                <div class="stat__number"><span data-target="6">0</span>+</div>
+                                <div class="stat__label">Years Exp.</div>
+                            </div>
+                            <div class="stat reveal stagger-2">
+                                <div class="stat__number"><span data-target="200">0</span>+</div>
+                                <div class="stat__label">Stores Modernized</div>
+                            </div>
+                            <div class="stat reveal stagger-3">
+                                <div class="stat__number"><span data-target="7">0</span>+</div>
+                                <div class="stat__label">Projects Led</div>
                             </div>
                         </div>
-                        <div class="about__text">
-                            <p>Hello there! I am Sahil Siddiqui. Building state-of-the-art, easy to use, user-friendly websites and applications is truly a passion of mine. I actively seek out new technologies and stay up-to-date on industry trends and advancements. I develop elegant and responsive frontend with optimised and modern backend.</p>
-                            <div class="about__technologies">
-                                <p>
-                                    Here's a list of technologies I've been working with recently
-                                    <div class="about__technologies__grid">
-                                        <ul>
-                                            <li>Javascript (ES6+)</li>
-                                            <li>React</li>
-                                            <li>Express</li>
-                                            <li>TypeScript</li>
-                                        </ul>
-                                        <ul>
-                                            <li>Node</li>
-                                            <li>MongoDB</li>
-                                            <li>HTML and (S)CSS</li>
-                                            <li>Next js</li>
-                                        </ul>
+
+                        <!-- Tech Stack -->
+                        <div class="about__tech reveal">
+                            <h3>Technologies I work with</h3>
+                            <div class="tech-categories">
+                                <div>
+                                    <p class="tech-category__label">Languages</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">JavaScript (ES2022+)</span>
+                                        <span class="tech-pill">TypeScript</span>
+                                        <span class="tech-pill">Go</span>
+                                        <span class="tech-pill">Rust</span>
+                                        <span class="tech-pill">Python</span>
                                     </div>
-                                </p>
+                                </div>
+                                <div>
+                                    <p class="tech-category__label">Frontend</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">React.js</span>
+                                        <span class="tech-pill">Next.js</span>
+                                        <span class="tech-pill">Redux Toolkit</span>
+                                        <span class="tech-pill">Material UI</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="tech-category__label">Backend</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">Node.js</span>
+                                        <span class="tech-pill">Express.js</span>
+                                        <span class="tech-pill">FastAPI</span>
+                                        <span class="tech-pill">Flask</span>
+                                        <span class="tech-pill">REST APIs</span>
+                                        <span class="tech-pill">Microservices</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="tech-category__label">Cloud & DevOps</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">Docker</span>
+                                        <span class="tech-pill">Kubernetes</span>
+                                        <span class="tech-pill">AWS</span>
+                                        <span class="tech-pill">GCP</span>
+                                        <span class="tech-pill">CI/CD</span>
+                                        <span class="tech-pill">BigQuery</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="tech-category__label">AI / ML</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">LangChain</span>
+                                        <span class="tech-pill">RAG</span>
+                                        <span class="tech-pill">LLM Fine-Tuning</span>
+                                        <span class="tech-pill">VectorDB</span>
+                                        <span class="tech-pill">Hugging Face</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <p class="tech-category__label">Databases</p>
+                                    <div class="tech-pills">
+                                        <span class="tech-pill">MongoDB</span>
+                                        <span class="tech-pill">PostgreSQL</span>
+                                        <span class="tech-pill">MySQL</span>
+                                        <span class="tech-pill">Redis</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="about projectDetails" id="about" style="max-width: 900px !important; margin: auto !important; padding: 50px !important;">
-                <p>Working as a MERN developer. Worked with many talented people and skilled mentors and improved my code quality and standards. Worked on a wide range of different types of applications. Some of the applications that I worked on are:</p>
-                <br>
-                <p>1. A collector's app <a style=" background-color: #AD0000; color: white;" target="_block" href="https://www.prettyappmaker.com/rco">Real Collectors Only</a>. To manage multiple collections and buying, selling or trading them. </p>
-                <p>2. A restaurant app <a style=" background-color: #AD0000; color: white;" target="_block" href="https://www.appshoal.com/">Shoal</a>. An app that connects users with Food and Beverage venues, while linking them to other users at that same location.</p>
-                <p>3. Using the most advanced, patented consumer-grade Pulsed Electromagnetic Field technology to date, <a style=" background-color: #AD0000; color: white;" target="_block" href="https://fluxwear.com/">SHIFT</a> assists individuals in reaching a meditative state using a discrete, wearable devic</p>
-                <p>4. <a style=" background-color: #AD0000; color: white;" target="_block" href="https://www.reeveal.co.uk/">REEVEAL</a> app hands you the ability to connect with all the best independent Health & Beauty professionals in your area.</p>
-                <p>5. <a style=" background-color: #AD0000; color: white;" target="_block" href="https://www.gradgab.com/">GradGab</a> lets you connect with current college students via personalized video chats & live campus tours at universities across the United States</p>
-                <p>6. <a style=" background-color: #AD0000; color: white;" target="_block" href="https://www.nartytheneighborparty.com/">Narty</a> is a social app designed to get you OFFLINE and forge real human connections all right where you live. Meet your neighbors by joining interest-based groups that are exclusive to your building.</p>
-            </section>
+        <!-- ==================== EXPERIENCE ==================== -->
+        <section class="section experience__bg" id="experience">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">Career Journey</p>
+                    <h2 class="section-title">Where I've <span class="gradient-text">worked</span>.</h2>
+                </div>
 
-            <section class="experience" id="experience">
-                <div class="container">
-                    <h1>Experience</h1>
-                    <div class="experience__grid">
-                        <div class="experience__employers">
-                            <button class="experience__button selected">
-                                QBurst.
-                            </button>
-                            <button class="experience__button">
-                                Appknit.
-                            </button>
-                            <button class="experience__button">
-                                Freelance.
-                            </button>
-                            <button class="experience__button">
-                                Nuvoco vistas.
-                            </button>
+                <div class="timeline">
+                    <!-- NCR Voyix -->
+                    <div class="timeline__item reveal stagger-1">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card" data-expandable>
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__role">Senior Software Engineer</h3>
+                                    <p class="timeline__company">NCR Voyix</p>
+                                </div>
+                                <span class="timeline__duration">Nov 2025 — Present</span>
+                            </div>
+                            <div class="timeline__bullets">
+                                <ul>
+                                    <li>Modernized enterprise POS systems deployed across 200+ retail stores in Japan, migrating legacy interfaces to React.js and TypeScript</li>
+                                    <li>Transformed Java backend services into Go-based microservices, improving API throughput for transaction-heavy workflows</li>
+                                    <li>Containerized and orchestrated POS services with Docker and Kubernetes for edge environments</li>
+                                    <li>Boosted development velocity ~20–30% using AI-assisted tools (GitHub Copilot, Claude)</li>
+                                </ul>
+                            </div>
+                            <p class="timeline__expand">
+                                <span>Click to expand</span>
+                                <span class="timeline__expand-icon" aria-hidden="true">▾</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- QBurst — Senior -->
+                    <div class="timeline__item reveal stagger-2">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card" data-expandable>
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__role">Senior Software Engineer</h3>
+                                    <p class="timeline__company">QBurst Technologies</p>
+                                </div>
+                                <span class="timeline__duration">Jul 2023 — Oct 2025</span>
+                            </div>
+                            <div class="timeline__bullets">
+                                <ul>
+                                    <li>Architected full-stack enterprise features using React.js, Node.js, Redis, and MongoDB on GCP, deployed via Docker, Kubernetes, and GitLab CI/CD</li>
+                                    <li>Built AI RAG pipelines using LangChain, VectorDB, and LLM fine-tuning for intelligent document retrieval</li>
+                                    <li>Developed proof-of-concept prototypes that secured client approval and reduced pre-development uncertainty</li>
+                                    <li>Mentored junior developers through code reviews and pairing, reducing onboarding time by ~30%</li>
+                                </ul>
+                            </div>
+                            <p class="timeline__expand">
+                                <span>Click to expand</span>
+                                <span class="timeline__expand-icon" aria-hidden="true">▾</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- QBurst — Engineer -->
+                    <div class="timeline__item reveal stagger-3">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card" data-expandable>
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__role">Software Engineer</h3>
+                                    <p class="timeline__company">QBurst Technologies</p>
+                                </div>
+                                <span class="timeline__duration">Nov 2021 — Jul 2023</span>
+                            </div>
+                            <div class="timeline__bullets">
+                                <ul>
+                                    <li>Collaborating with the development team to create POC designs for client projects and ensuring client approval</li>
+                                    <li>Implementing projects using latest and most suitable technologies, ensuring future-proof stacks</li>
+                                    <li>Writing clean, readable, well-documented code adhering to industry best practices</li>
+                                    <li>Built with Node.js, Express.js, Redis, React.js, Redux, SCSS, and MongoDB</li>
+                                </ul>
+                            </div>
+                            <p class="timeline__expand">
+                                <span>Click to expand</span>
+                                <span class="timeline__expand-icon" aria-hidden="true">▾</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- App Knit -->
+                    <div class="timeline__item reveal stagger-4">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card" data-expandable>
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__role">Software Engineer</h3>
+                                    <p class="timeline__company">App Knit</p>
+                                </div>
+                                <span class="timeline__duration">Oct 2020 — Oct 2021</span>
+                            </div>
+                            <div class="timeline__bullets">
+                                <ul>
+                                    <li>Designed a reusable React component library and UI kit (SCSS/BEM, micro-interactions), cutting frontend dev time by ~40% across 7+ projects</li>
+                                    <li>Integrated frontend systems with backend REST APIs and implemented Redux state management</li>
+                                    <li>Led end-to-end development and production deployment of 7+ projects</li>
+                                </ul>
+                            </div>
+                            <p class="timeline__expand">
+                                <span>Click to expand</span>
+                                <span class="timeline__expand-icon" aria-hidden="true">▾</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Freelance -->
+                    <div class="timeline__item reveal stagger-5">
+                        <div class="timeline__dot" aria-hidden="true"></div>
+                        <div class="timeline__card" data-expandable>
+                            <div class="timeline__header">
+                                <div>
+                                    <h3 class="timeline__role">Full-Stack Engineer</h3>
+                                    <p class="timeline__company">Freelance</p>
+                                </div>
+                                <span class="timeline__duration">Oct 2019 — Oct 2020</span>
+                            </div>
+                            <div class="timeline__bullets">
+                                <ul>
+                                    <li>Designed and delivered 5+ full-stack web applications using React.js, Node.js, Express.js, MongoDB, and AWS</li>
+                                    <li>Managed full client lifecycle — requirements gathering, iterative delivery, and post-launch support</li>
+                                </ul>
+                            </div>
+                            <p class="timeline__expand">
+                                <span>Click to expand</span>
+                                <span class="timeline__expand-icon" aria-hidden="true">▾</span>
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="projects" class="projects">
-                <h1>Projects</h1>
-                <div class="projects__navigation" >
-                      <div class="projects__buttons">
-                        <div class="projects__container">
-                            <a class="projects__btn projects__effect01" target="_blank"><span>React Js</span></a>
-                        </div>
-                      </div>
-
-                      <div class="projects__buttons">
-                        <div class="projects__container">
-                            <a class="projects__btn projects__effect01" target="_blank"><span>Javascript</span></a>
-                        </div>
-                      </div>
-
-                      <div class="projects__buttons">
-                        <div class="projects__container">
-                            <a class="projects__btn projects__effect01" target="_blank"><span>Html-Css</span></a>
-                        </div>
-                      </div>
-
-                      <div class="projects__buttons">
-                        <div class="projects__container">
-                            <a class="projects__btn projects__effect01" target="_blank"><span>MERN</span></a>
-                        </div>
-                      </div>
-
-                      <div class="projects__buttons">
-                        <div class="projects__container">
-                            <a class="projects__btn projects__effect01" target="_blank"><span>Node Js</span></a>
-                        </div>
-                      </div>
-                   </div>
-                <div id="projects-group"></div>
-            </section>
-
-
-            <section class="contact" id="contact">
-                <div class="container">
-                    <h1>Contact Me</h1>
-                    <form class="contact__form">
-                        <div class="input-group">
-                            <input required type="text"  name="name"  id="nameInput">
-                            <label for="name" class="input-group__placeholder">Name</label>
-                        </div>
-                        <div class="input-group">
-                            <input required type="text"  name="email" id="emailInput" >
-                            <label for="email" class="input-group__placeholder">Email</label>
-                        </div>
-                        <div class="input-group">
-                            <input required type="text"  name="subject" id="subjectInput">
-                            <label for="subject" class="input-group__placeholder">Subject</label>
-                        </div>
-                        <div class="input-group">
-                            <textarea required name="description" rows="9" id="messageInput" ></textarea>
-                            <label for="subject" class="input-group__placeholder">Message</label>
-                        </div>
-                        <button class="button" id="submit-button" type="submit">Send</button>
-                    </form>
+        <!-- ==================== PROJECTS ==================== -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">Featured Work</p>
+                    <h2 class="section-title">Things I've <span class="gradient-text">built</span>.</h2>
+                    <p class="section-subtitle">Enterprise-scale projects I've led and contributed to, delivering measurable impact for real clients.</p>
                 </div>
-            </section>
-        </main>
-        <footer class="footer">
-            <p>Developed by <a href="https://github.com/Sahil" target="_blank">Sahil Siddiqui</a></p>
-        </footer>
-    </div>
+
+                <div class="projects__grid">
+                    <!-- Prudential Singapore -->
+                    <div class="project-card reveal stagger-1">
+                        <div class="project-card__header">
+                            <div class="project-card__gradient">
+                                <span class="project-card__icon" aria-hidden="true">🏦</span>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__client">Prudential Singapore</p>
+                            <h3 class="project-card__title">Reinsight · PruChat · AI Lab</h3>
+                            <p class="project-card__desc">
+                                Led full-stack development of the Reinsight AI dashboard delivering real-time 
+                                AI-driven insights for insurance operations. Integrated SSO via OpenID Connect 
+                                and SAML with Azure AD. Migrated backend from NestJS to FastAPI for improved 
+                                API response times.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">FastAPI</span>
+                                <span class="project-card__tag">BigQuery</span>
+                                <span class="project-card__tag">Docker</span>
+                                <span class="project-card__tag">GKE</span>
+                                <span class="project-card__tag">Azure AD</span>
+                                <span class="project-card__tag">SAML</span>
+                            </div>
+                            <div class="project-card__impact">
+                                <p>Deployed Dockerized microservices to GKE with automated GitLab CI/CD pipelines</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gorilla Safety -->
+                    <div class="project-card reveal stagger-2">
+                        <div class="project-card__header">
+                            <div class="project-card__gradient" style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.8), rgba(99, 102, 241, 0.6));">
+                                <span class="project-card__icon" aria-hidden="true">🚛</span>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__client">Gorilla Safety</p>
+                            <h3 class="project-card__title">Fleet Management & Compliance Platform</h3>
+                            <p class="project-card__desc">
+                                Built compliance, repair, and inspection REST APIs for safety-critical trucking 
+                                fleet workflows across enterprise clients. Integrated Google Maps API for 
+                                real-time vehicle tracking with Redis caching to optimize dashboard performance.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">Redux</span>
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">Express.js</span>
+                                <span class="project-card__tag">Redis</span>
+                                <span class="project-card__tag">AWS S3</span>
+                                <span class="project-card__tag">Google Maps</span>
+                            </div>
+                            <div class="project-card__impact">
+                                <p>Real-time vehicle tracking with optimized API latency via Redis caching</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- InfraAI -->
+                    <div class="project-card reveal stagger-3">
+                        <div class="project-card__header">
+                            <div class="project-card__gradient" style="background: linear-gradient(135deg, rgba(139, 92, 246, 0.8), rgba(236, 72, 153, 0.6));">
+                                <span class="project-card__icon" aria-hidden="true">🏗️</span>
+                            </div>
+                        </div>
+                        <div class="project-card__body">
+                            <p class="project-card__client">InfraAI</p>
+                            <h3 class="project-card__title">Infrastructure Site Analysis Platform</h3>
+                            <p class="project-card__desc">
+                                Built AI-assisted annotation workflows enabling cost estimation, project review, 
+                                and customer bidding through an interactive web application. Implemented GPX maps, 
+                                360° panoramic views, and annotation canvas tools.
+                            </p>
+                            <div class="project-card__tags">
+                                <span class="project-card__tag">React.js</span>
+                                <span class="project-card__tag">Redux Toolkit</span>
+                                <span class="project-card__tag">Node.js</span>
+                                <span class="project-card__tag">Leaflet.js</span>
+                                <span class="project-card__tag">React Konva</span>
+                                <span class="project-card__tag">Pannellum</span>
+                                <span class="project-card__tag">AWS</span>
+                            </div>
+                            <div class="project-card__impact">
+                                <p>Interactive 360° views and AI-powered annotation for infrastructure bidding</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== TESTIMONIALS ==================== -->
+        <section class="section testimonials__bg" id="testimonials">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">What People Say</p>
+                    <h2 class="section-title">Trusted by <span class="gradient-text">colleagues</span>.</h2>
+                </div>
+
+                <div class="testimonials__carousel reveal">
+                    <div class="testimonials__track" id="testimonials-track">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    I managed Sahil during his tenure at Qburst and he had outstanding performance. 
+                                    His learnability was awesome and eagerly took on any challenge presented to him.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Varun George Varghese</h4>
+                                        <p>Director Projects @ QBurst</p>
+                                        <p class="testimonial-card__relationship">Managed Sahil directly</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    I had the pleasure of working with Sahil on a web application project. 
+                                    Sahil consistently impressed me with his strong technical expertise in React, 
+                                    attention to detail, and ability to tackle complex problems efficiently. 
+                                    His calm and focused approach under pressure made him a reliable teammate.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Danish Nasar</h4>
+                                        <p>Associate Lead Engineer at Envestnet</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    I had worked with Sahil in my last company. He is a fantastic person to work with, 
+                                    and is not only a multi-skilled and insightful colleague, but also an inspiring 
+                                    strategist. Very good person. Great employee with very strong problem solving skills. 
+                                    Sahil is an asset to any company.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Saikat Mondal</h4>
+                                        <p>Senior Engineer at Ticketmaster</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    I've had the opportunity to work with Sahil, and he's an excellent Full Stack Engineer 
+                                    with strong problem-solving skills and a solid understanding of both frontend and backend 
+                                    development. He's reliable, detail-oriented, and works really well in a team environment.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Abhijith C S</h4>
+                                        <p>UI Developer @ QBurst</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 5 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    Working with Sahil was a great experience. His dedication and eagerness to learn 
+                                    were impressive, and he was always willing to take on new challenges. Sahil's 
+                                    technical abilities and collaborative spirit make him an asset to any software 
+                                    engineering team.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Vinod Valsan</h4>
+                                        <p>Lead Engineer at QBurst</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 6 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    As Sahil's senior, I was fortunate to see his skills in action on a daily basis. 
+                                    His passion for software engineering is evident in his work, and he consistently 
+                                    delivers high-quality results. He is a natural problem-solver and has a great 
+                                    sense of teamwork.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Jagmohan Singh</h4>
+                                        <p>Full Stack Engineer at Spiralyze</p>
+                                        <p class="testimonial-card__relationship">Managed Sahil directly</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 7 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    It was a pleasure to work with Sahil on a project. He has an eye for detail 
+                                    and a passion for delivering high-quality results. Sahil's technical skills 
+                                    and problem-solving abilities make him an excellent software engineer.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Gaurav Rawat</h4>
+                                        <p>SDE 3 at Nike</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 8 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-card__inner">
+                                <p class="testimonial-card__text">
+                                    Sahil is a talented software engineer who is always looking for ways to optimize 
+                                    performance and improve the user experience. His dedication and enthusiasm are 
+                                    infectious, and he is always willing to lend his expertise to help the team succeed.
+                                </p>
+                                <div class="testimonial-card__author">
+                                    <div class="testimonial-card__author-info">
+                                        <h4>Nikhil Negi</h4>
+                                        <p>Backend Engineer</p>
+                                        <p class="testimonial-card__relationship">Worked on same team</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="testimonials__controls">
+                        <button class="testimonials__btn" id="testimonial-prev" aria-label="Previous testimonial">
+                            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                        </button>
+                        <div class="testimonials__dots" id="testimonial-dots"></div>
+                        <button class="testimonials__btn" id="testimonial-next" aria-label="Next testimonial">
+                            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"></polyline></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="reveal">
+                    <p class="section-label">Get In Touch</p>
+                </div>
+
+                <div class="contact__content reveal">
+                    <h2 class="contact__heading">Let's Build Something <span class="gradient-text">Together</span>.</h2>
+                    <p class="contact__text">
+                        I'm currently open to new opportunities — whether it's full-stack engineering, 
+                        AI systems, or platform architecture. If you have a project in mind or just want 
+                        to connect, my inbox is always open.
+                    </p>
+                    <a href="mailto:sahilsiddiqui.dev@gmail.com" class="contact__email-btn">
+                        Say Hello
+                        <span class="btn-icon" aria-hidden="true">→</span>
+                    </a>
+                    <div class="contact__socials">
+                        <a href="https://github.com/Sahil811" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/sahil-siddiqui811/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <p>Designed & Built by <a href="https://github.com/Sahil811" target="_blank" rel="noopener noreferrer">Sahil Siddiqui</a> · <span id="footer-year"></span></p>
+    </footer>
 </body>
 
 </html>
