@@ -49,8 +49,8 @@ class ImpactCanvas {
   }
 
   createNodes(width, height) {
-    const labels = ["AI", "RAG", "GKE", "GO", "POS", "MAP", "API", "CI"];
-    const count = width < 700 ? 16 : 28;
+    const labels = ["AI", "RAG", "GKE", "GO", "POS", "MAP", "API", "CI", "SSO", "REDIS", "DATA", "EDGE"];
+    const count = width < 700 ? 18 : 34;
     const nodes = [];
 
     for (let i = 0; i < count; i += 1) {
@@ -61,7 +61,7 @@ class ImpactCanvas {
         y: (height * (0.12 + ((i * 29) % 76) / 100)) + Math.cos(i) * 18,
         vx: Math.sin(i * 1.7) * 0.18,
         vy: Math.cos(i * 1.3) * 0.18,
-        radius: label.length === 2 ? 18 : 22,
+        radius: label.length <= 3 ? 18 : 24,
         color: i % 4 === 0 ? "#8ee6c3" : i % 4 === 1 ? "#7cc7ff" : i % 4 === 2 ? "#f4c76a" : "#ff8d7a",
       });
     }
@@ -127,6 +127,35 @@ class ImpactCanvas {
     ctx.restore();
   }
 
+  drawLanes(width, height) {
+    const ctx = this.ctx;
+    ctx.save();
+    ctx.lineWidth = 1;
+
+    for (let i = 0; i < 4; i += 1) {
+      const y = height * (0.18 + i * 0.18);
+      const gradient = ctx.createLinearGradient(0, y, width, y);
+      gradient.addColorStop(0, "rgba(142, 230, 195, 0)");
+      gradient.addColorStop(0.5, i % 2 ? "rgba(124, 199, 255, 0.14)" : "rgba(244, 199, 106, 0.12)");
+      gradient.addColorStop(1, "rgba(142, 230, 195, 0)");
+      ctx.strokeStyle = gradient;
+      ctx.beginPath();
+      ctx.moveTo(width * 0.05, y);
+      ctx.bezierCurveTo(width * 0.32, y - 80, width * 0.66, y + 80, width * 0.95, y);
+      ctx.stroke();
+    }
+
+    if (this.pointer.active) {
+      const radial = ctx.createRadialGradient(this.pointer.x, this.pointer.y, 0, this.pointer.x, this.pointer.y, 220);
+      radial.addColorStop(0, "rgba(142, 230, 195, 0.12)");
+      radial.addColorStop(1, "rgba(142, 230, 195, 0)");
+      ctx.fillStyle = radial;
+      ctx.fillRect(0, 0, width, height);
+    }
+
+    ctx.restore();
+  }
+
   drawConnections() {
     const ctx = this.ctx;
 
@@ -178,6 +207,7 @@ class ImpactCanvas {
 
     this.ctx.clearRect(0, 0, width, height);
     this.drawGrid(width, height);
+    this.drawLanes(width, height);
     this.drawConnections();
     this.drawNodes();
   }
@@ -307,6 +337,63 @@ class TimelineAccordion {
   }
 }
 
+class ProjectArchitecture {
+  constructor() {
+    this.cards = document.querySelectorAll("[data-project-layer]");
+    this.bind();
+  }
+
+  bind() {
+    this.cards.forEach((card) => {
+      const button = card.querySelector(".architecture-toggle");
+      if (!button) return;
+
+      button.addEventListener("click", () => {
+        const isActive = card.classList.toggle("architecture-active");
+        button.setAttribute("aria-expanded", String(isActive));
+      });
+
+      card.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          card.classList.remove("architecture-active");
+          button.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  }
+}
+
+class ProofNarrative {
+  constructor() {
+    this.panels = document.querySelectorAll(".proof-panel");
+    this.reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this.init();
+  }
+
+  init() {
+    if (!this.panels.length) return;
+
+    if (this.reduceMotion || !("IntersectionObserver" in window)) {
+      this.panels[0].classList.add("active");
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.panels.forEach((panel) => panel.classList.remove("active"));
+            entry.target.classList.add("active");
+          }
+        });
+      },
+      { threshold: 0.55 }
+    );
+
+    this.panels.forEach((panel) => observer.observe(panel));
+  }
+}
+
 class CardTilt {
   constructor() {
     this.cards = document.querySelectorAll(".project-card");
@@ -368,6 +455,8 @@ document.addEventListener("DOMContentLoaded", () => {
   new Navigation();
   new ScrollReveal();
   new TimelineAccordion();
+  new ProjectArchitecture();
+  new ProofNarrative();
   new CardTilt();
   initSmoothScroll();
   setFooterYear();

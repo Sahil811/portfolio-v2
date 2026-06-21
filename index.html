@@ -50,7 +50,7 @@
 
     <div class="nav-overlay" id="nav-overlay"></div>
 
-    <section class="hero" id="hero">
+    <section class="hero" id="hero" data-reveal-sequence="command">
         <canvas class="hero__canvas" id="hero-canvas" aria-hidden="true"></canvas>
         <div class="hero__grid">
             <div class="hero__copy">
@@ -60,6 +60,12 @@
                     I build enterprise systems that survive production: AI dashboards, Go microservices,
                     cloud deployments, RAG pipelines, and high-stakes workflow platforms.
                 </p>
+                <div class="hero__command-line" aria-label="Primary engineering modes">
+                    <span>Architect</span>
+                    <span>Debug</span>
+                    <span>Ship</span>
+                    <span>Mentor</span>
+                </div>
 
                 <div class="hero__badges" aria-label="Career highlights">
                     <div class="impact-badge">
@@ -107,25 +113,28 @@
             </div>
 
             <div class="hero__stage" aria-label="Engineering impact console">
-                <div class="impact-console">
+                <div class="impact-console" data-command-center>
                     <div class="impact-console__top">
-                        <span>IMPACT OS</span>
-                        <span>LIVE SIGNAL</span>
+                        <span>ENGINEERING COMMAND CENTER</span>
+                        <span>LIVE SYSTEM MAP</span>
                     </div>
                     <div class="impact-console__main">
                         <div class="signal-map">
-                            <span class="signal-node signal-node--ai">AI</span>
-                            <span class="signal-node signal-node--pos">POS</span>
-                            <span class="signal-node signal-node--go">GO</span>
-                            <span class="signal-node signal-node--cloud">GKE</span>
+                            <span class="signal-node signal-node--ai" data-system-node="ai">AI</span>
+                            <span class="signal-node signal-node--pos" data-system-node="pos">POS</span>
+                            <span class="signal-node signal-node--go" data-system-node="go">GO</span>
+                            <span class="signal-node signal-node--cloud" data-system-node="cloud">GKE</span>
+                            <span class="signal-node signal-node--data" data-system-node="data">DATA</span>
                             <span class="signal-line signal-line--one"></span>
                             <span class="signal-line signal-line--two"></span>
                             <span class="signal-line signal-line--three"></span>
+                            <span class="signal-line signal-line--four"></span>
                         </div>
-                        <div class="console-feed">
-                            <div><span>Prudential</span><strong>AI insight dashboards</strong></div>
-                            <div><span>NCR Voyix</span><strong>Japan retail modernization</strong></div>
-                            <div><span>Gorilla Safety</span><strong>fleet compliance workflows</strong></div>
+                        <div class="console-feed" data-status-stream>
+                            <div><span>Prudential</span><strong>AI insight dashboards</strong><i>online</i></div>
+                            <div><span>NCR Voyix</span><strong>Japan retail modernization</strong><i>shipping</i></div>
+                            <div><span>Gorilla Safety</span><strong>fleet compliance workflows</strong><i>stable</i></div>
+                            <div><span>InfraAI</span><strong>map + annotation workspace</strong><i>mapped</i></div>
                         </div>
                     </div>
                     <div class="impact-console__bottom">
@@ -137,6 +146,11 @@
                             <span>Operating mode</span>
                             <strong>Lead, debug, ship, mentor</strong>
                         </div>
+                    </div>
+                    <div class="command-meters" aria-hidden="true">
+                        <span style="--meter: 91%"></span>
+                        <span style="--meter: 76%"></span>
+                        <span style="--meter: 84%"></span>
                     </div>
                 </div>
             </div>
@@ -163,6 +177,33 @@
             <div class="proof-strip__item">
                 <span>Product trust</span>
                 <strong>insurance, retail, fleet, infrastructure</strong>
+            </div>
+        </section>
+
+        <section class="proof-narrative" aria-label="Engineering proof narrative">
+            <div class="container proof-narrative__grid">
+                <aside class="proof-rail">
+                    <p class="eyebrow">System proof</p>
+                    <strong>Before the projects, the signal is already clear.</strong>
+                    <span>Scroll path: business context -> architecture -> production ownership.</span>
+                </aside>
+                <div class="proof-panels">
+                    <article class="proof-panel reveal" data-reveal-sequence="proof">
+                        <span>01 / Enterprise Scope</span>
+                        <h2>Systems for real operators, not toy demos.</h2>
+                        <p>Insurance operations, restaurant POS, retail stores, fleet compliance, and infrastructure review workflows all show the same pattern: business-critical interfaces backed by serious platform work.</p>
+                    </article>
+                    <article class="proof-panel reveal" data-reveal-sequence="proof">
+                        <span>02 / Architecture Range</span>
+                        <h2>Frontend taste, backend depth, cloud discipline.</h2>
+                        <p>React and TypeScript experiences connect to Node, Go, FastAPI, Redis, BigQuery, Docker, Kubernetes, GCP, AWS, SSO, and CI/CD systems.</p>
+                    </article>
+                    <article class="proof-panel reveal" data-reveal-sequence="proof">
+                        <span>03 / Team Leverage</span>
+                        <h2>The work compounds through teams.</h2>
+                        <p>Mentoring, reviews, prototypes, production debugging, and cross-functional delivery make the portfolio read like a senior engineer's operating system, not a gallery.</p>
+                    </article>
+                </div>
             </div>
         </section>
 
@@ -297,7 +338,7 @@
                 </div>
 
                 <div class="case-list">
-                    <article class="case-study case-study--ncr project-card reveal">
+                    <article class="case-study case-study--ncr project-card reveal" tabindex="0" data-project-layer="pos">
                         <div class="case-study__visual" aria-hidden="true">
                             <div class="pos-system">
                                 <div class="pos-terminal">
@@ -335,6 +376,13 @@
                             <div class="tag-row">
                                 <span>React</span><span>TypeScript</span><span>Go</span><span>POS</span><span>Cloud</span><span>Kubernetes</span>
                             </div>
+                            <button class="architecture-toggle" type="button" aria-expanded="false">Architecture mode</button>
+                            <div class="architecture-map" aria-label="NCR Voyix architecture layers">
+                                <span>UI modernization</span>
+                                <span>Go services</span>
+                                <span>Edge + cloud</span>
+                                <span>Retail operations</span>
+                            </div>
                             <a class="case-study__link" href="https://www.ncrvoyix.com/restaurant/aloha-cloud-pos" target="_blank" rel="noopener noreferrer">
                                 <span>Visit Project</span>
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg>
@@ -342,7 +390,7 @@
                         </div>
                     </article>
 
-                    <article class="case-study case-study--prudential project-card reveal">
+                    <article class="case-study case-study--prudential project-card reveal" tabindex="0" data-project-layer="ai">
                         <div class="case-study__visual" aria-hidden="true">
                             <div class="mock-window">
                                 <div class="mock-window__bar">
@@ -378,6 +426,13 @@
                             <div class="tag-row">
                                 <span>React</span><span>Node.js</span><span>FastAPI</span><span>BigQuery</span><span>GKE</span><span>SAML</span>
                             </div>
+                            <button class="architecture-toggle" type="button" aria-expanded="false">Architecture mode</button>
+                            <div class="architecture-map" aria-label="Prudential architecture layers">
+                                <span>AI dashboards</span>
+                                <span>FastAPI services</span>
+                                <span>BigQuery data</span>
+                                <span>SSO + GKE</span>
+                            </div>
                             <a class="case-study__link" href="https://www.prudential.com.sg/" target="_blank" rel="noopener noreferrer">
                                 <span>Visit Project</span>
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg>
@@ -385,7 +440,7 @@
                         </div>
                     </article>
 
-                    <article class="case-study case-study--gorilla project-card reveal">
+                    <article class="case-study case-study--gorilla project-card reveal" tabindex="0" data-project-layer="fleet">
                         <div class="case-study__visual" aria-hidden="true">
                             <div class="fleet-board">
                                 <div class="fleet-map">
@@ -414,6 +469,13 @@
                             <div class="tag-row">
                                 <span>React</span><span>Redux</span><span>Node.js</span><span>Express</span><span>Redis</span><span>AWS S3</span>
                             </div>
+                            <button class="architecture-toggle" type="button" aria-expanded="false">Architecture mode</button>
+                            <div class="architecture-map" aria-label="Gorilla Safety architecture layers">
+                                <span>Fleet dashboard</span>
+                                <span>REST APIs</span>
+                                <span>Redis cache</span>
+                                <span>Maps + S3</span>
+                            </div>
                             <a class="case-study__link" href="https://gorillasafety.com/" target="_blank" rel="noopener noreferrer">
                                 <span>Visit Project</span>
                                 <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" /></svg>
@@ -421,7 +483,7 @@
                         </div>
                     </article>
 
-                    <article class="case-study case-study--infra project-card reveal">
+                    <article class="case-study case-study--infra project-card reveal" tabindex="0" data-project-layer="infra">
                         <div class="case-study__visual" aria-hidden="true">
                             <div class="infra-workspace">
                                 <div class="terrain-grid">
@@ -447,6 +509,13 @@
                             </ul>
                             <div class="tag-row">
                                 <span>React</span><span>Redux Toolkit</span><span>Node.js</span><span>Leaflet</span><span>Konva</span><span>AWS</span>
+                            </div>
+                            <button class="architecture-toggle" type="button" aria-expanded="false">Architecture mode</button>
+                            <div class="architecture-map" aria-label="InfraAI architecture layers">
+                                <span>GPX maps</span>
+                                <span>360 review</span>
+                                <span>Canvas tools</span>
+                                <span>AI estimate flow</span>
                             </div>
                             <a class="case-study__link" href="http://infra.ai/" target="_blank" rel="noopener noreferrer">
                                 <span>Visit Project</span>
