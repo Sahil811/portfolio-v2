@@ -49,7 +49,7 @@ class ImpactCanvas {
   }
 
   createNodes(width, height) {
-    const labels = ["AI", "RAG", "GKE", "GO", "POS", "MAP", "API", "CI", "SSO", "REDIS", "DATA", "EDGE"];
+    const labels = ["AI", "RAG", "NEXT", "NODE", "LLM", "SQL", "API", "CI", "CMS", "REDIS", "DATA", "VEC"];
     const count = width < 700 ? 18 : 34;
     const nodes = [];
 
